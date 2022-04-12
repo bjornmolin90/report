@@ -57,6 +57,21 @@ footer {
     font-size: 15px;
 }
 
+.card {
+    border: 1px solid black;
+    width: 60px;
+    height: 80px;
+    float: left;
+    margin: 8px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.player {
+    width: 500px;
+    height: 150px;
+    margin: 15px;
+}
 @media only screen and (max-width: 768px) {
   img {
     width: 300px;
