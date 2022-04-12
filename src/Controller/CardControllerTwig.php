@@ -18,6 +18,14 @@ class CardControllerTwig extends AbstractController
             'link_to_deck' => $this->generateUrl('deck'),
             'link_to_shuffle' => $this->generateUrl('shuffle'),
             'link_to_draw' => $this->generateUrl('draw'),
+            'link_to_draws' => $this->generateUrl('num-draws', [
+            'numDraws' => 1,
+            ]),
+            'link_to_deal' => $this->generateUrl('deal', [
+            'numPlayers' => 1,
+            'numCards' => 1,
+            ]),
+            'link_to_json' => $this->generateUrl('json'),
         ];
         return $this->render('/card/card.html.twig', $data);
     }

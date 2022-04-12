@@ -13,7 +13,7 @@ class CardControllerJson
 
 
     /**
-     * @Route("/card/api/deck")
+     * @Route("/card/api/deck", name="json")
      */
     public function deck(): Response
     {

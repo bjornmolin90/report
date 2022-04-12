@@ -41,5 +41,4 @@ class Deck
         return $drawnCards;
     }
 
-
 }
