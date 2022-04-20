@@ -18,7 +18,6 @@ class FormLoginController extends AbstractController
      */
     public function login(): Response
     {
-
         return $this->render('form/login.html.twig');
     }
 

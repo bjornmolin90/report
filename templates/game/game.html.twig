@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h1>21</h1>
+<h2>Regler</h2>
+<p>
+Spelets idé är att med två eller flera kort försöka uppnå det sammanlagda värdet 21, eller komma så nära som möjligt utan att överskrida 21.
+Spelaren drar ett kort och bestämmer om den vill stanna eller ta ytterligare ett kort.
+Essen är värda valfritt 1 eller 14, kungarna 13, damerna 12, knektarna 11. Nummerkorten har samma värden som valören.
+Om spelaren får över 21 vinner banken.
+När spelaren stannar drar banken kort.
+Banken drar kort tills den hamnar på 17 eller har över 21.
+Banken vinner vid lika eller om banken har mer än spelaren.
+Spelaren vinner om banken får över 21 eller har mer än banken.
+Därefter kan man påbörja en ny omgång.
+Tryck på starta spel för att spela.
+</p>
+<p><a href="{{ link_to_doc }}">Dokumentation</a>.</p>
+<button type="button"><a href="{{ link_to_play }}">Starta spel</a></button>
+{% endblock %}

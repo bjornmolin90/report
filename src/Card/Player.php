@@ -6,7 +6,7 @@ use App\Card\Card;
 
 class Player
 {
-    public $hand;
+    public $hand = array();
     public $name;
 
     public function __construct($id)
@@ -19,4 +19,8 @@ class Player
         $this->hand = $cards;
     }
 
+    public function addCard($card)
+    {
+        $this->hand[] = $card;
+    }
 }

@@ -4,7 +4,7 @@ namespace App\Card;
 
 class Card
 {
-    protected $id;
+    private $id;
     public $value;
     public $suite;
     private $suites = ["♠", "♥", "♦", "♣", "🂿"];
@@ -16,9 +16,17 @@ class Card
         $this->suite = $this->suites[floor($id / 13)];
         if ($id > 51) {
             $this->value = "Joker";
-        }
-        else {
+        } else {
             $this->value = $this->values[$id % 13];
         }
+    }
+
+    public function getValue()
+    {
+        $val = $this->id % 13 + 1;
+        if ($val == 1) {
+            $val = 14;
+        }
+        return $val;
     }
 }

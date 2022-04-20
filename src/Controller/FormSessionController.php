@@ -40,7 +40,6 @@ class FormSessionController extends AbstractController
         $roll  = $request->request->get('roll');
         $save  = $request->request->get('save');
         $clear = $request->request->get('clear');
-
         $sum = $session->get("sum") ?? 0;
         $saved = $session->get("saved") ?? 0;
 

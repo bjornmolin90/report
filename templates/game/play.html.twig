@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h1>21</h1>
+
+{% if game.bankWins %}
+<h1>Du förlorade</h1>
+{% endif %}
+
+{% if game.playerWins %}
+<h1>Du vann</h1>
+{% endif %}
+
+<form method="post">
+    <p>
+    {% if game.playerscore < 21 and not game.bankPlays %}
+    <input type="submit" name="draw" value="Dra kort">
+    <input type="submit" name="stop" value="Stanna">
+    {% endif %}
+
+
+    <input type="submit" name="restart" value="Nytt spel"> </p>
+</form>
+<div class="player">
+<h2>Player (score = {{game.playerscore}})</h2>
+{% for card in game.player.hand %}
+    <div class="card">
+        <p>{{card.value}}</p>
+        <p>{{card.suite}}</p>
+    </div>
+{% endfor %}
+</div>
+
+{% if game.bankPlays %}
+<div class="player">
+<h2>Bank (score = {{game.bankscore}})</h2>
+{% for card in game.bank.hand %}
+    <div class="card">
+        <p>{{card.value}}</p>
+        <p>{{card.suite}}</p>
+    </div>
+{% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

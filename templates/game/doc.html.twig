@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h1>Dokumentation</h1>
+<h2>Flödesdiagram</h2>
+<p><img src="{{ asset("img/FlowchartGame.png") }}" width="500" alt="Flowchart"></p>
+<h2>Pseudokod</h2>
+<pre>
+<code>
+    deal first card to player
+    WHILE player chooses to draw another card
+        deal card to player
+        IF sum of hand is greater than 21 THEN
+            bank wins
+            start new game
+        ENDIF
+    ENDWHILE
+    WHILE sum of bank's hand is less than 17
+        deal card to bank
+        IF sum of hand is greater than 21 THEN
+            player wins
+            start new game
+        ENDIF
+    ENDWHILE
+    evaluate hands
+    IF bank's hand is equal to or greater than player's hand THEN
+        bank wins
+    ELSE
+        player wins
+    ENDIF
+    start new game
+</code>
+</pre>
+
+{% endblock %}

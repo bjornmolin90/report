@@ -111,7 +111,7 @@ class CardControllerTwig extends AbstractController
     public function dealCards(int $numPlayers, int $numCards): Response
     {
         $deck = new \App\Card\Deck();
-        for ($i=0; $i<$numPlayers; $i++) {
+        for ($i = 0; $i < $numPlayers; $i++) {
             $players[$i] = new \App\Card\Player($i);
             $players[$i]->getHand($deck->draws($numCards));
         }

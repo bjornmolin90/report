@@ -10,7 +10,7 @@ class Deck
 
     public function __construct()
     {
-        foreach (range(0,51) as $index) {
+        foreach (range(0, 51) as $index) {
             $this->deck[$index] = new \App\Card\Card($index);
         }
     }
@@ -35,10 +35,9 @@ class Deck
     {
         $drawnCards = array($num);
         shuffle($this->deck);
-        for ($i=0; $i<$num; $i++) {
+        for ($i = 0; $i < $num; $i++) {
             $drawnCards[$i] = array_pop($this->deck);
         }
         return $drawnCards;
     }
-
 }
