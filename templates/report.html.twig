@@ -24,6 +24,7 @@
 <p>Jag har inte gått vidare med planeringen för kortspelet utan väljer att ta det i nästa kursmoment. Det gör egentligen ingen skillnad men det kändes skönare mentalt att få lämnat in det här för att sen ge mig in på nästa. Av erfarenhet från oopython kan jag dock säga att koden i projektet gick förhållandevis snabbt att skriva efter att ha gjort ett klassdiagram och tänkt igenom strukturen noga innan jag gav mig på kodandet.</p>
 
 <p>Min TIL det här kursmomentet är nog främst att hela strukturen börjar sitta lite bättre och att jag har implementerat mina första PHP-klasser. Sammantaget känns det som att saker och ting började klarna lite mer mot slutet av uppgiften efter en tids kämpande.</p>
+
 <h2>Kmom03</h2>
 <p>Modelleringen av kortspelet tyckte jag kändes bra. Det går alltid (har jag märkt) lite trögt i början men när man väl kommit över den första tröskeln brukar det flyta på bra. Just det tror jag är en stor anledning till att förarbetet är så bra. Det går inte att komma vidare från modelleringen innan man verkligen har tänkt igenom uppgiften och kunnat formulera det i meningar och diagram. När man sen startar själva kodandet har man kommit mycket längre fram och i slutändan sparar det en tid. Det är inte perfekt och det uppkommer både problem och lösningar man inte har tänkt på men stora delar av programmet och flödet beter sig som jag tänkte mig att det skulle göra. Detta har definitivt underlättat själva kodandet.</p>
 
@@ -36,7 +37,15 @@
 <p>Min TIL är att förarbetet gör en positiv skillnad för en uppgift. Det tyckte jag tidigare också, bland annat i oopython-projektet men jag slarvar trots det med det om det inte är ett krav och blir ivrig och börjar koda istället. Det är något jag vill bli bättre på och förhoppningsvis snart har "lärt mig" tillräckligt många gånger för att det ska bli en naturlig del av hur jag tar mig an en uppgift.</p>
 
 <h2>Kmom04</h2>
-<p></p>
+<p>Det gick bra att skriva tester för min kod. Utöver en viss syntaxskillnad var det väldigt likt hur vi skrev tester i python så mycket kändes bekant och det flöt på bra. Jag hade dock rätt stora problem att få igång phpunit och fick sitta ett antal timmar med det. Efter det flöt det dock på bra som sagt och jag tycker att verktyget är grymt. Överblicken man får i browsern är otroligt bra och det är roligt att se hur effektiva testerna är. Efter strulet med att få det att fungera tycker jag även att det är enkelt att arbeta med.</p>
+
+<p>Kodtäckningen gick bra. Jag kom precis under 90, 89,66% på min gameklass. Klasserna jag hade med mig sen tidigare fick jag 84% täckning på. Jag valde att inte testa någon metod då de inte användes i mitt 21-spel så för metoderna kopplade till 21 tror jag att jag ligger precis över 90%.</p>
+
+<p>Det mesta av koden jag har gjort var enkel att testa. Min metod för shuffle blev lite klurig och kommer att ge fel vid något tillfälle. Jag testar ett korts position före och efter att jag anropat metoden och en gång av femtiotvå kommer den då att ha hamnat på samma plats. Sättet min metod evaluateHand är gjord på gör att det inte fanns något bra sätt att testa ett par av raderna i de övriga metoderna. Den skriver över poängen efter att den testat på om essen ska vara värda 14 eller 1 och jag kunde därför inte hårdkoda in en poäng för att testa om banken skulle ha vunnit där. Det hade gått att skriva om koden för att kunna testa även det. Jag har dock inte valt att göra det då jag ansåg att min kodtäckning var bra ändå. Inte heller någon annan del av min kod har jag behövt/valt att skriva om.</p>
+
+<p>Jag tänker att testbar kod är i alla fall ett tecken på att koden är ren. Koden borde vara lätt att förstå om det är lätt att testa den och komma på vilka tester som hade fungerat. Är den lätt att förstå kan man också anta att den är rent skriven. Sen finns det säkert många andra aspekter som också påverkar.</p>
+
+<p>Min TIL den här veckan är hur verktygen phpunit och phpdoc fungerar. Jag tycker att båda är riktigt bra på sitt sätt. Tydligheten i vad som testas med unit respektive koden i sig i phpdoc är väldigt användbart. De snygga rapporterna gör det lätt att se vad innehållet är.</p>
 
 <h2>Kmom05</h2>
 <p></p>
