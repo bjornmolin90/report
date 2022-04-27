@@ -103,6 +103,8 @@
         "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 6 src || true",
         "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
+        "phpdoc": "php tools/phpdoc/phpdoc",
+        "phpunit": "php bin/phpunit",
         "lint": [
             "@phpcpd",
             "@phpmd",

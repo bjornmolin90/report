@@ -5,6 +5,10 @@ namespace App\Game;
 use App\Card\Deck;
 use App\Card\Player;
 
+/**
+ * Class Game for the game 21.
+ * Uses class Deck and Player for a functioning cardgame.
+ */
 class Game
 {
     public $deck;
