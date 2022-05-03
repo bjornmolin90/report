@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<h1>Bok</h1>
+
+    <div>
+        <h2>Titel</h2>
+        <p>{{ book.title }}</p>
+        <h2>Författare</h2>
+        <p>{{ book.author }}</p>
+        <h2>ISBN</h2>
+        <p>{{ book.isbn }}</p>
+    </div>
+    <p><img src="{{ asset( "img/" ~ book.image ) }}" width="200" alt="Book"></p>
+
+{% endblock %}

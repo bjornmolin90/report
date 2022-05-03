@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<form method="post">
+    <fieldset>
+    <legend>Lägg till en bok</legend>
+    <p>
+        <label>Titel:
+            <input type="text" name="title" value="{{ book.title }}" readonly>
+        </label>
+    </p>
+    <p>
+        <label>Författare:
+            <input type="text" name="author" value="{{ book.author }}" readonly>
+        </label>
+    </p>
+    <p>
+        <label>ISBN:
+            <input type="text" name="isbn" value="{{ book.isbn }}" readonly>
+        </label>
+    </p>
+    <p>
+        <label>Bild:
+            <input type="text" name="image" value="{{ book.image }}" readonly>
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Ta bort">
+    </p>
+    </fieldset>
+</form>
+
+{% endblock %}

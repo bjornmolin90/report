@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<h1>Biblioteket</h1>
+
+<table class="table">
+    <tr>
+        <th>Bok</th>
+        <th>Författare</th>
+        <th>Ta bort</th>
+        <th>Uppdatera</th>
+    </tr>
+{% for book in books %}
+
+    <tr>
+        <td><a href="{{ path('book', {'id': book.id}) }}">{{ book.title }}</a></td>
+        <td>{{ book.author }}</td>
+        <td class="icon"><a href="{{ path('delete', {'id': book.id}) }}">🗑</a></td>
+        <td class="icon"><a href="{{ path('update', {'id': book.id}) }}">🖉</a></td>
+    </div>
+{% endfor %}
+</table>
+<button class="button" type="button"><a href="{{ link_to_add }}">Lägg till bok</a></button>
+{% endblock %}
