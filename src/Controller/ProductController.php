@@ -24,7 +24,7 @@ class ProductController extends AbstractController
     */
     public function createProduct(
         ManagerRegistry $doctrine
-        ): Response {
+    ): Response {
             $entityManager = $doctrine->getManager();
 
             $product = new Product();
@@ -38,8 +38,8 @@ class ProductController extends AbstractController
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush();
 
-            return new Response('Saved new product with id '.$product->getId());
-        }
+            return new Response('Saved new product with id ' . $product->getId());
+    }
 
 
     /**
@@ -60,12 +60,12 @@ class ProductController extends AbstractController
     public function showProductById(
         ProductRepository $productRepository,
         int $id
-        ): Response {
+    ): Response {
             $product = $productRepository
             ->find($id);
 
             return $this->json($product);
-        }
+    }
 
     /**
     * @Route("/product/delete/{id}", name="product_delete_by_id")
@@ -73,21 +73,21 @@ class ProductController extends AbstractController
     public function deleteProductById(
         ManagerRegistry $doctrine,
         int $id
-        ): Response {
+    ): Response {
             $entityManager = $doctrine->getManager();
             $product = $entityManager->getRepository(Product::class)->find($id);
 
-            if (!$product) {
-                throw $this->createNotFoundException(
-                    'No product found for id '.$id
-                );
-            }
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id ' . $id
+            );
+        }
 
             $entityManager->remove($product);
             $entityManager->flush();
 
             return $this->redirectToRoute('product_show_all');
-        }
+    }
 
     /**
     * @Route("/product/update/{id}/{value}", name="product_update")
@@ -96,19 +96,19 @@ class ProductController extends AbstractController
         ManagerRegistry $doctrine,
         int $id,
         int $value
-        ): Response {
+    ): Response {
             $entityManager = $doctrine->getManager();
             $product = $entityManager->getRepository(Product::class)->find($id);
 
-            if (!$product) {
-                throw $this->createNotFoundException(
-                    'No product found for id '.$id
-                );
-            }
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id ' . $id
+            );
+        }
 
             $product->setValue($value);
             $entityManager->flush();
 
             return $this->redirectToRoute('product_show_all');
-        }
+    }
 }

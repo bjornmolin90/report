@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class LibraryController extends AbstractController
 {
-
     /**
     * @Route("/library", name="library")
     */
@@ -33,7 +32,8 @@ class LibraryController extends AbstractController
     /**
     * @Route("/library/add", name="add", methods={"GET","HEAD"})
     */
-    public function addBook(){
+    public function addBook()
+    {
 
         return $this->render('library/add.html.twig', ['title' => "Add book"]);
     }
@@ -43,8 +43,9 @@ class LibraryController extends AbstractController
     * @Route("/library/add", name="add-process", methods={"POST"})
     */
     public function addBookProcess(
-        ManagerRegistry $doctrine, Request $request
-        ): Response {
+        ManagerRegistry $doctrine,
+        Request $request
+    ): Response {
             $entityManager = $doctrine->getManager();
 
             $title = $request->request->get('title');
@@ -66,13 +67,14 @@ class LibraryController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('library');
-        }
+    }
 
 
     /**
         * @Route("/library/book/{id}", name="book")
         */
-    public function showBook($id, BooksRepository $booksRepository): Response {
+    public function showBook($id, BooksRepository $booksRepository): Response
+    {
         $book = $booksRepository
             ->find($id);
         return $this->render('library/book.html.twig', ['title' => "Book", 'book' => $book]);
@@ -84,13 +86,13 @@ class LibraryController extends AbstractController
     public function updateBook(
         int $id = null,
         BooksRepository $booksRepository
-        ): Response {
+    ): Response {
             $book = $booksRepository
                 ->find($id);
 
 
                 return $this->render('library/update.html.twig', ['title' => "Update", 'book' => $book]);
-        }
+    }
 
     /**
     * @Route("/library/update/{id}", name="uppdate-process", methods={"POST"})
@@ -100,7 +102,7 @@ class LibraryController extends AbstractController
         Request $request,
         BooksRepository $booksRepository,
         $id
-        ): Response {
+    ): Response {
             $entityManager = $doctrine->getManager();
             $book = $booksRepository
                 ->find($id);
@@ -120,7 +122,7 @@ class LibraryController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('library');
-        }
+    }
 
     /**
     * @Route("/library/delete/{id}", name="delete", methods={"GET","HEAD"})
@@ -128,7 +130,7 @@ class LibraryController extends AbstractController
     public function deleteBook(
         int $id = null,
         BooksRepository $booksRepository
-        ): Response {
+    ): Response {
             $book = $booksRepository
                 ->find($id);
 
@@ -144,7 +146,7 @@ class LibraryController extends AbstractController
         ManagerRegistry $doctrine,
         Request $request,
         BooksRepository $booksRepository
-        ): Response {
+    ): Response {
             $entityManager = $doctrine->getManager();
             $book = $booksRepository
                 ->find($id);
@@ -155,46 +157,4 @@ class LibraryController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('library');
-        }
-
-
-
-
-
-    /**
-    * @Route("/product/show/{id}", name="product_by_id")
-    */
-    public function showProductById(
-        ProductRepository $productRepository,
-        int $id
-        ): Response {
-            $product = $productRepository
-            ->find($id);
-
-            return $this->json($product);
-        }
-
-    /**
-    * @Route("/product/delete/{id}", name="product_delete_by_id")
-    */
-    public function deleteProductById(
-        ManagerRegistry $doctrine,
-        int $id
-        ): Response {
-            $entityManager = $doctrine->getManager();
-            $product = $entityManager->getRepository(Product::class)->find($id);
-
-            if (!$product) {
-                throw $this->createNotFoundException(
-                    'No product found for id '.$id
-                );
-            }
-
-            $entityManager->remove($product);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('product_show_all');
-        }
-
-
-}
+    }
