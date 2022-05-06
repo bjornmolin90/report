@@ -158,3 +158,4 @@ class LibraryController extends AbstractController
 
             return $this->redirectToRoute('library');
     }
+}
