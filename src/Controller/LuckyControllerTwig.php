@@ -45,4 +45,16 @@ class LuckyControllerTwig extends AbstractController
             'title' => $title,
         ]);
     }
+
+    /**
+     * @Route("/metrics", name="metrics")
+     */
+    public function metrics(): Response
+    {
+        $title = "Metrics";
+
+        return $this->render('metrics.html.twig', [
+            'title' => $title,
+        ]);
+    }
 }
