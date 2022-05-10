@@ -4,7 +4,7 @@ namespace App\Dice;
 
 use PHPUnit\Framework\TestCase;
 
-function random_int($a, $b) {
+function random_int() {
     return 3;
 }
 

@@ -39,7 +39,7 @@ class DiceHandTest extends TestCase
          $dicehand->add($die);
          $die = new Dice();
          $dicehand->add($die);
-         $dicehand->roll($die);
+         $dicehand->roll();
          $this->assertEquals("[3][3]", $dicehand->getAsString());
 
      }
