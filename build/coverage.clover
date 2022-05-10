@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651840178">
-  <project timestamp="1651840178">
+<coverage generated="1652203616">
+  <project timestamp="1652203616">
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Card\Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="4" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="8" elements="11" coveredelements="9"/>
@@ -77,7 +77,7 @@
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Controller\CardControllerTwig.php">
       <class name="App\Controller\CardControllerTwig" namespace="global">
-        <metrics complexity="10" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="0" elements="55" coveredelements="0"/>
+        <metrics complexity="10" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="0" elements="56" coveredelements="0"/>
       </class>
       <line num="14" type="method" name="card" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="16" type="stmt" count="0"/>
@@ -127,14 +127,15 @@
       <line num="114" type="stmt" count="0"/>
       <line num="115" type="stmt" count="0"/>
       <line num="116" type="stmt" count="0"/>
-      <line num="118" type="stmt" count="0"/>
+      <line num="117" type="stmt" count="0"/>
       <line num="119" type="stmt" count="0"/>
       <line num="120" type="stmt" count="0"/>
-      <line num="130" type="method" name="deck2" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="132" type="stmt" count="0"/>
+      <line num="121" type="stmt" count="0"/>
+      <line num="131" type="method" name="deck2" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="133" type="stmt" count="0"/>
       <line num="134" type="stmt" count="0"/>
-      <metrics loc="140" ncloc="119" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="0" elements="55" coveredelements="0"/>
+      <line num="135" type="stmt" count="0"/>
+      <metrics loc="141" ncloc="120" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="0" elements="56" coveredelements="0"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Controller\DiceController.php">
       <class name="App\Controller\DiceController" namespace="global">
@@ -359,13 +360,13 @@
       <line num="135" type="stmt" count="0"/>
       <line num="138" type="stmt" count="0"/>
       <line num="144" type="method" name="deleteBookProcess" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="149" type="stmt" count="0"/>
       <line num="150" type="stmt" count="0"/>
       <line num="151" type="stmt" count="0"/>
-      <line num="152" type="stmt" count="0"/>
-      <line num="155" type="stmt" count="0"/>
-      <line num="157" type="stmt" count="0"/>
-      <line num="159" type="stmt" count="0"/>
-      <metrics loc="162" ncloc="135" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="0" elements="57" coveredelements="0"/>
+      <line num="154" type="stmt" count="0"/>
+      <line num="156" type="stmt" count="0"/>
+      <line num="158" type="stmt" count="0"/>
+      <metrics loc="161" ncloc="134" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="0" elements="57" coveredelements="0"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Controller\LuckyController.php">
       <class name="App\Controller\LuckyController" namespace="global">
@@ -403,7 +404,7 @@
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Controller\LuckyControllerTwig.php">
       <class name="App\Controller\LuckyControllerTwig" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+        <metrics complexity="4" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="13" coveredelements="0"/>
       </class>
       <line num="14" type="method" name="start" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="16" type="stmt" count="0"/>
@@ -415,7 +416,10 @@
       <line num="40" type="method" name="report" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="44" type="stmt" count="0"/>
-      <metrics loc="49" ncloc="40" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      <line num="52" type="method" name="metrics" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="56" type="stmt" count="0"/>
+      <metrics loc="61" ncloc="49" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="13" coveredelements="0"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Controller\ProductController.php">
       <class name="App\Controller\ProductController" namespace="global">
@@ -461,44 +465,44 @@
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Dice\Dice.php">
       <class name="App\Dice\Dice" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
       </class>
-      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="11" type="stmt" count="0"/>
-      <line num="14" type="method" name="roll" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="20" type="method" name="getAsString" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <metrics loc="25" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="7" coveredelements="0"/>
+      <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="11" type="stmt" count="7"/>
+      <line num="14" type="method" name="roll" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="20" type="method" name="getAsString" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <metrics loc="25" ncloc="25" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Dice\DiceGraphic.php">
       <class name="App\Dice\DiceGraphic" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="21" type="method" name="getAsString" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <metrics loc="26" ncloc="26" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="16" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="21" type="method" name="getAsString" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <metrics loc="26" ncloc="26" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Dice\DiceHand.php">
       <class name="App\Dice\DiceHand" namespace="global">
-        <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="12" coveredelements="0"/>
+        <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="12" coveredelements="12"/>
       </class>
-      <line num="11" type="method" name="add" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="13" type="stmt" count="0"/>
-      <line num="16" type="method" name="roll" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="23" type="method" name="getNumberDices" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="28" type="method" name="getAsString" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <metrics loc="37" ncloc="37" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="12" coveredelements="0"/>
+      <line num="11" type="method" name="add" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="13" type="stmt" count="2"/>
+      <line num="16" type="method" name="roll" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="23" type="method" name="getNumberDices" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="28" type="method" name="getAsString" visibility="public" complexity="2" crap="2" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <metrics loc="37" ncloc="37" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="12" coveredelements="12"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Entity\Books.php">
       <class name="App\Entity\Books" namespace="global">
@@ -593,7 +597,7 @@
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Repository\BooksRepository.php">
       <class name="App\Repository\BooksRepository" namespace="global">
-        <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
+        <metrics complexity="5" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
       </class>
       <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="23" type="stmt" count="0"/>
@@ -605,15 +609,7 @@
       <line num="44" type="stmt" count="0"/>
       <line num="45" type="stmt" count="0"/>
       <line num="46" type="stmt" count="0"/>
-      <line num="54" type="method" name="findByExampleField" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="56" type="stmt" count="0"/>
-      <line num="57" type="stmt" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="59" type="stmt" count="0"/>
-      <line num="60" type="stmt" count="0"/>
-      <line num="61" type="stmt" count="0"/>
-      <line num="62" type="stmt" count="0"/>
-      <metrics loc="78" ncloc="48" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="18" coveredelements="0"/>
+      <metrics loc="80" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
     <file name="C:\Users\bjorn\dbwebb-kurser\mvc\me\report\src\Repository\ProductRepository.php">
       <class name="App\Repository\ProductRepository" namespace="global">
@@ -631,6 +627,6 @@
       <line num="46" type="stmt" count="0"/>
       <metrics loc="79" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="27" loc="1565" ncloc="1321" classes="26" methods="89" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="379" coveredstatements="47" elements="468" coveredelements="57"/>
+    <metrics files="27" loc="1579" ncloc="1318" classes="26" methods="89" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="375" coveredstatements="61" elements="464" coveredelements="80"/>
   </project>
 </coverage>

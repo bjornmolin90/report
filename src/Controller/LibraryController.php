@@ -144,7 +144,6 @@ class LibraryController extends AbstractController
     public function deleteBookProcess(
         int $id = null,
         ManagerRegistry $doctrine,
-        Request $request,
         BooksRepository $booksRepository
     ): Response {
             $entityManager = $doctrine->getManager();

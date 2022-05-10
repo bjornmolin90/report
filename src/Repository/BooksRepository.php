@@ -47,10 +47,11 @@ class BooksRepository extends ServiceEntityRepository
         }
     }
 
+    /*
      /**
       * @return Books[] Returns an array of Books objects
       */
-
+     /*
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('b')
@@ -62,6 +63,7 @@ class BooksRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    */
 
     /*
     public function findOneBySomeField($value): ?Books

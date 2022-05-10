@@ -3,15 +3,55 @@
 <h1>Metrics</h1>
 
 <h2>Introduktion</h2>
-<p></p>
+<p>De fyra C:na står för coverage, cyclomatic complexity, cohesion och coupling.
+Covarage är på svenska kodtäckning och beskriver hur stor andel av koden som är täckt av tester. 100% är max och innebär att alla kodrader är testade, alltså har testerna som skrivits sett till att all kod som finns har exekverats när testerna har körts. Har man inte skrivit några tester alls, alternativ gjort extremt dåliga tester är coverage 0% och allt däremellan kan finnas.
+</p>
+
+<p>Cyclomatic complexity mäter hur komplext ett program är. Om en enkel metod bara returnerar något har den en cyklomatisk komplexitet på 1. Skulle det exempelvis även finnas en if-sats är komplexiteten istället 2. Det samma hade gällt om det hade varit en while-loop För varje beslutsväg koden kan ta ökar sedan komplexiteten med 1 för varje beslutsväg.</p>
+
+<p>Med cohesion menar man hur väl innehållet i en klass hänger ihop. Om klassen i fråga med dess metoder gör bara en sak har den klassen hög cohesion. Om det istället även görs andra saker i klassen, till exempel att en klass som definerar bilar även skulle ha metoder för att ta hand om ägaruppgifter, skulle den klassen ha låg cohesion. LCOM (Lack of cohesive methods) är en skala för att mäta cohesion. 1 är det bästa värdet, klassen gör alltså bara en sak och har därmed hög cohesion medan en högre siffra speglar metoder som inte är cohesive där siffran indikerar orelaterade metoder.</p>
+
+<p>Coupling står för klassers beroende av varandra. Hård coupling innebär att kopplingen med andra klasser är stark, alltså att klasserna är beroende av varandra. Lös coupling är motsatsen, där klasserna är självständiga och oberoende av varandra. Lös coupling är vad som föredras då man har bättre kontroll över en klass som är oberoende av andra. Man skiljer även på afferent coupling (AC), hur många klasser som är beroende av klassen man mäter på, och efferent coupling (EC), hur många klasser klassen man mäter på är beroende av.</p>
+
+<p>Naturligtvis vill man ha bra mätvärden över hela brädet men av olika anledningar kan det vara mer eller mindre viktigt och säger inte allt. Jag har i mitt projekt en code coverage på 13% vilket inte är särskilt högt. Samtidigt ligger jag på runt 90% i vissa klasser. Kanske är det viktigare att testa modell-klasserna än router-klasserna till exempel? Samtidigt är det självklart alltid bättre att ha så högt mätvärde som möjligt, men om man som i mitt fall har 13% är det också viktigt att se vilka 13% det är som är täckta.</p>
+
+<p>Jag hade överlag ganska låga värden för coupling vilket är bra. Efferent coupling hade jag höga värden på i mina controllers men jag har svårt att se hur man kan undvika det. Utan att ha andra klasser i controllern kan jag inte använda mig av dem i min app. Mitt högsta värde för afferent coupling var 4 och även där är det förhållande till controllern som boostar siffrorna.</p>
+
+<p>Genomsnittet för komplexitet i mina klasser var på 2,52 vilket ser bra ut. Högsta klassvärdet var 8 vilket fortfarande håller sig inom vad som är rimligt. Det var game-klassen som även är den mest omfattande och komplexa av mina modell-klasser så det kändes rimligt att den även hade högst komplexitet.</p>
+
+<p>För mätningen av cohesion var mitt genomsnittliga LCOM 1,33 vilket är väldigt bra. Några av de automatgenererade klasserna för databasen drar dessutom upp det och de allra flesta klasserna låg på 1. Maxtalet var 4.</p>
 
 <h2>Phpmetrics</h2>
-<p></p>
+<p>Jag valde att titta närmare på min Game-klass här då det är den som är mest omfattande av mina modell-klasser. För coupling hade den ett AC-värde av 1 och EC-värde av 2. Klassen instansieras i controllern och det går därför inte att komma infrån det. I klassen instansieras ett Deck och en Player. Man hade kunnat förbättra resultatet för coupling genom att exempelvis integrera Player som en del av Game-klassen. Det hade dock försämrat klasens cohesion då Player är något annat än själva spelet och hade därför, i mitt tycke, varit en sämre lösning. </p>
+
+<p>Class cycl. i klassen är 8 och värdet är 11 för WMC. Jag tolkar det som att den cylomatiska kompleiteten är 8 men statistiken i Scrutinizer får mig att undra över hur korrekt det är vilket jag återkommer till i nästa stycke. Som jag förstår WMC är det en algoritm som även tar hänsyn till metoderna och dess antal i sin beräkning men jag är inte helt säker. Sammantaget kan man säga att resultaten är helt okej men att det nog kan finnas lösningar för att förbättra det ytterligare.</p>
+
+<p>Cohesion för klassen är bra. Värdet för LCOM är 1 och det finns därmed inget att klaga på där. Jag ser inte heller hur värdet skulle kunna förbättras. Jag valde även att titta närmare på defects då det låter allvarligt och Game-klassen som jag valde att titta närmare på var den som hade högst, det vill säga sämst värde där. Efter att ha tagit reda på lite om vad defects egentligen innebär visade det sig dock bara vara ett annat sätt att mäta komplexiteten på. Klassen var den som hade flest beslutsvägar och det är därför fullt rimligt att den har högst värde även på defects också.</p>
+
+<p>Spontant ligger värdena både för Game-klassen men även över hela kodbasen rätt bra till. Coupling ser jag det som svårt att förbättra i och med att mina controllers behöver instansiera klasserna och jag inte vill försämra min cohesion genom att göra mer omfattande klasser. Därmed känns det som att komplexiteten är det som hade känts rimligast att se över. Kanske finns där någon beslutsväg som inte hade varit nödvändig om koden skrivits om lite? Jag vet även från andra rapporter att min coverage hade kunnat förbättras.</p>
 
 <h2>Scrutinizer</h2>
-<p></p>
+<p>Min coverage fick jag ingen rapport på i phpmetrics men i Scrutinizer fick jag en badge som visar på 12,7% coverage. Största anledningen till det är att jag inte har några tester utanför modell-klasserna, dessutom har jag bara skrivit tester kopplade till mitt spel.</p>
+
+<p>Komplexiteten gjorde mig lite förvirrad. Jag la märke till att min Game-klass hade 11 i komplexitet, som i sin tur står förklarad som number of decision points. Därför är jag lite osäker på hur jag ska förhålla mig till 8an jag fick på phpmetrics. Inget av det är dåligt och skillnaden är inte jättestor så i det stora hela gör det kanke varken till eller från utan var mer en reflektion i svårigheterna som finns när det gäller att tolka statistik och olik sätt att mäta på.</p>
+
+<p>Jag har inte sett några separata värden för coupling och cohesion, däremot har jag kollat upp att de är parametrar som sätter total-betyget i scrutinizer och en indikation kan därmed komma genom den siffran. Jag fick en total på 6,14 vilket är rätt medelmåttigt. Där är även betyg på respektive klass och metoder vilket jag tänker mig också tar med de aspekterna i sina beräkningar.</p>
+
+<p>Det jag tyckte var mest intressant att kolla på i övrigt var issues. Inte bara listar den fel eller problematik i klassen utan den kommer även med konkreta förslag. Denna delen är verkligen en hjälp att ha för att skriva bra kod då det blir lättare att modifiera den när man direkt kan se var felet är och vad felet är. Sen kan det säkert finnas anledningar att behålla koden som den är ibland men man bli i alla fall medveten om det och ofta är det säkert bra förbättringar som är värde att göra.</p>
+
+<p>Jag nämnde några potentiella förbättringar under phpmetrics. Efter att ha tittat i Scrutinizer är det tydligt att den solklart bästa förbättringen jag kan göra är att inte ladda upp min tools-katalog. Jag har över 3800 issues, så många klasser att det tar ett antal minuter att ens kunna bläddra igenom dem och så vidare. Coverage baseras på min src-mapp och siffrorna är därför relevanta men i övrigt blir det dels skeva resultat men även extremt svåröverskådligt. Utöver att ta bort kod som är mindre relevant är det coverage som tydligt hade kunnat förbättras.</p>
+
+3 fel:
+The variable $players does not seem to be defined for all execution paths leading up to this point.
+
+The parameter $request is not used and could be removed
+
+The expression return $this->createQuer...getQuery()->getResult() also could return the type integer which is incompatible with the documented return type App\Entity\Books[].
 
 <h2>Förbättringar</h2>
+<p>Det första jag gjorde för att implementera förbättringar till koden var att ta bort min tools-mapp från github och lägga till den i .gitignore. Mitt betyg gick från 6,14 till 10 så det var uppenbart det bästa jag kunde göra. Alla klasser och alla metoder har A i betyg så överlag verkar koden se riktigt bra ut. Issues gick ner från över 3800 till 4. Det ena finns i min kernal och jag vill inte ändra i den. Mina resterande förbättringar kommer därför vara att ordna upp de övriga 3 issues och att skriva några nya tester för att förbättra min coverage.
+Jag tror inte att förbättringarna kommer att göra någon större skillnad då jag kommer att skriva tester för modell-klasserna medan det är controller-klasserna som klart störst med flest rader kod. En liten förbättring borde dock kunna synas. Issues verkar inte synas i betyget, alternativt är det så lågt att de inte påverkar det så det kanske inte att synas att de är lösta men om inte annat ser man under issues-fliken att de inte längre är problem.</p>
+
 <p></p>
 
 <h2>Diskussion</h2>

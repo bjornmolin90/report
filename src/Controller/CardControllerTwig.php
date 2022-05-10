@@ -110,6 +110,7 @@ class CardControllerTwig extends AbstractController
      */
     public function dealCards(int $numPlayers, int $numCards): Response
     {
+        $players = array();
         $deck = new \App\Card\Deck();
         for ($i = 0; $i < $numPlayers; $i++) {
             $players[$i] = new \App\Card\Player($i);
