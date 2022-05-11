@@ -35,24 +35,21 @@ Covarage är på svenska kodtäckning och beskriver hur stor andel av koden som 
 
 <p>Komplexiteten gjorde mig lite förvirrad. Jag la märke till att min Game-klass hade 11 i komplexitet, som i sin tur står förklarad som number of decision points. Därför är jag lite osäker på hur jag ska förhålla mig till 8an jag fick på phpmetrics. Inget av det är dåligt och skillnaden är inte jättestor så i det stora hela gör det kanke varken till eller från utan var mer en reflektion i svårigheterna som finns när det gäller att tolka statistik och olik sätt att mäta på.</p>
 
-<p>Jag har inte sett några separata värden för coupling och cohesion, däremot har jag kollat upp att de är parametrar som sätter total-betyget i scrutinizer och en indikation kan därmed komma genom den siffran. Jag fick en total på 6,14 vilket är rätt medelmåttigt. Där är även betyg på respektive klass och metoder vilket jag tänker mig också tar med de aspekterna i sina beräkningar.</p>
+<p>Jag har inte sett några separata värden för coupling och cohesion, däremot har jag kollat upp att de är parametrar som sätter total-betyget i Scrutinizer och en indikation kan därmed komma genom den siffran. Jag fick en total på 6,14 vilket är rätt medelmåttigt. Där är även betyg på respektive klass och metoder vilket jag tänker mig också tar med de aspekterna i sina beräkningar.</p>
 
 <p>Det jag tyckte var mest intressant att kolla på i övrigt var issues. Inte bara listar den fel eller problematik i klassen utan den kommer även med konkreta förslag. Denna delen är verkligen en hjälp att ha för att skriva bra kod då det blir lättare att modifiera den när man direkt kan se var felet är och vad felet är. Sen kan det säkert finnas anledningar att behålla koden som den är ibland men man bli i alla fall medveten om det och ofta är det säkert bra förbättringar som är värde att göra.</p>
 
 <p>Jag nämnde några potentiella förbättringar under phpmetrics. Efter att ha tittat i Scrutinizer är det tydligt att den solklart bästa förbättringen jag kan göra är att inte ladda upp min tools-katalog. Jag har över 3800 issues, så många klasser att det tar ett antal minuter att ens kunna bläddra igenom dem och så vidare. Coverage baseras på min src-mapp och siffrorna är därför relevanta men i övrigt blir det dels skeva resultat men även extremt svåröverskådligt. Utöver att ta bort kod som är mindre relevant är det coverage som tydligt hade kunnat förbättras.</p>
 
-3 fel:
-The variable $players does not seem to be defined for all execution paths leading up to this point.
-
-The parameter $request is not used and could be removed
-
-The expression return $this->createQuer...getQuery()->getResult() also could return the type integer which is incompatible with the documented return type App\Entity\Books[].
-
 <h2>Förbättringar</h2>
 <p>Det första jag gjorde för att implementera förbättringar till koden var att ta bort min tools-mapp från github och lägga till den i .gitignore. Mitt betyg gick från 6,14 till 10 så det var uppenbart det bästa jag kunde göra. Alla klasser och alla metoder har A i betyg så överlag verkar koden se riktigt bra ut. Issues gick ner från över 3800 till 4. Det ena finns i min kernal och jag vill inte ändra i den. Mina resterande förbättringar kommer därför vara att ordna upp de övriga 3 issues och att skriva några nya tester för att förbättra min coverage.
-Jag tror inte att förbättringarna kommer att göra någon större skillnad då jag kommer att skriva tester för modell-klasserna medan det är controller-klasserna som klart störst med flest rader kod. En liten förbättring borde dock kunna synas. Issues verkar inte synas i betyget, alternativt är det så lågt att de inte påverkar det så det kanske inte att synas att de är lösta men om inte annat ser man under issues-fliken att de inte längre är problem.</p>
+Jag tror inte att förbättringarna kommer att göra någon större skillnad då jag kommer att skriva tester för modell-klasserna medan det är controller-klasserna som klart störst med flest rader kod. En liten förbättring borde dock kunna synas. Issues verkar inte synas i betyget, alternativt är det så lågt att de inte påverkar det så det kommer kanske inte att synas att de är lösta men om inte annat ser man under issues-fliken att de inte längre är problem.</p>
 
-<p></p>
+<p>Min code coverage gick upp från 12,7% till 18%. Jag la till tester för Dice-klasserna. Som tidigare sagt är den stora delen av koden controller-klasser så för att få ett riktigt bra resultat hade det behövts tester för dem. Modell-klasserna har dock god coverage nu. Mina issues försvann men det tillkom ett par nya. Jag rättade även dem men det gav nya fel som nu är att det är fel antal argument. Detta gäller dock min mock-funktion jag gjorde för testerna till Dice-klasserna och jag väljer att ignorerar det. Både testerna och koden fungerar som det ska. I phpmetrics kunde jag inte läsa av några direkta skillnader. Den utgick från src-mappen från början och har inte en rapport för coverage vilket gör att inte mycket har hänt där. Den stora skillnaden har varit att tools-mappen försvann, mätvärdena såg fina ut efter det.</p>
 
 <h2>Diskussion</h2>
-<p></p>
+<p>Jag tycker att det verkar vara ett bra sätt att jobba på. Dock kanske man kunde haft tydligare inställningar för hur hård mätningen ska vara. Det blir lite för mycket siffror, värden och index för att hålla reda på och förstå. Scrutinizers betygsättning och badges tycker jag är väldigt bra just för att man på ett enkelt sätt får en överblick över hur projektet verkar se ut. Man kan nog känna sig trygg med att man inte är helt ute och cyklar om man får bra värden även om det inte säger allt. Att Scrutinizer kör automatiskt när man gör en ändring på sitt repo är dessutom ett plus, det blir inget extra-arbete och man behöver inte tänka på något utan kan bara gå in och kika om man känner för att få en koll på hur det ser ut.</p>
+
+<p>Man får nog komplettera de här verktygen med andra för det ska bli riktigt bra. Först och främst måste ändå att koden fungerar vara det viktigaste. Sen kan man bygga vidare med den här typen av verktyg, linters och så vidare för att utveckla sig själv och sin kod. Det är dock ett bra sätt att få koll på hur koden ser ut ur ett annat perspektiv än det man själv kanske instinktivt har när man bara vill skriva ett fungerande program. Därför tycker jag absolut att det kan vara till hjälp om man har ett sunt förhållningssätt till det. För att det verkligen ska göra skillnad krävs det nog lite mer research kring programmen och mätningarna också.</p>
+
+{% endblock %}
