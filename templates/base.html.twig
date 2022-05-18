@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title> {% block title %} {{ title }} {% endblock %} </title>
+        {% block style %}
         <link rel="stylesheet" href="{{ asset("style/style.css") }}">
+        {% endblock %}
         <link rel="icon" href="{{ asset("favicon.ico") }}">
     </head>
 
@@ -18,6 +20,7 @@
                   <li><a href="{{ path("game") }}">Spel</a></li>
                   <li><a href="{{ path("library") }}">Bibliotek</a></li>
                   <li><a href="{{ path("metrics") }}">Metrics</a></li>
+                  <li><a href="{{ path("proj") }}">Projekt</a></li>
                 </ul>
             </nav>
             <h1 class="header-head">Björns sida för MVC</h1>

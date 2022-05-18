@@ -1,0 +1,23 @@
+{% block style %}
+ <link rel="stylesheet" href="{{ asset("style/table.css") }}">
+{% endblock %}
+
+{% block tablemk %}
+    <table class="table">
+        <tr>
+            <th>Årtal</th>
+            <th>Per Capita</th>
+            <th>Per Bnp</th>
+            <th>Total</th>
+        </tr>
+    {% for item in materialf %}
+        <tr>
+            <td>{{ item.artal }}</td>
+            <td>{{ item.percapita }}</td>
+            <td>{{ item.perbnp }}</td>
+            <td>{{ item.total }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

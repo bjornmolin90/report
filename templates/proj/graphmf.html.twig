@@ -1,0 +1,27 @@
+{% block style %}
+ <link rel="stylesheet" href="{{ asset("style/graph.css") }}">
+{% endblock %}
+
+{% block graphmf %}
+<div class="bar-graph">
+
+    <h2>Bar graph</h2>
+
+    <table style={{"height:#{parmf.chartheight}px;width:#{parmf.chartwidth}px;margin-left:#{parmf.chartmargin}px;"}}>
+    <tbody>
+        {% for item in datamf %}
+            <tr style={{"left:#{item.offset}px;"}}>
+            <th style={{"left:#{parmf.titleadjust}px;"}}>{{ item.title }}</th>
+            <td class="bar-graph type" style={{"height:#{item.height}px;width:#{parmf.barwidth}px;"}}><p>{{item.value}}</p></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+    <div class="graph-ticks">
+        {% for item in ticksmf %}
+            <div class="tick" style={{"width:#{parmf.tickswidth}px;left:#{parmf.ticksadjust}px;bottom:#{item.height}px;"}}><p style={{"bottom:-75px;left:#{parmf.tickmarksadjust}px;"}}>{{item.value}}</p></div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

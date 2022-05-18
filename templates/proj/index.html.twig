@@ -1,0 +1,42 @@
+{% extends 'proj/baseproj.html.twig' %}
+
+{% block content %}
+<h1>Materialkonsumtion</h1>
+
+<h2>Grafer och sånt</h2>
+<p>BLA BLA blab la</p>
+
+<div class="section1">
+    {% block graphmk %}
+    {% include 'proj/graphmk.html.twig' %}
+    {% endblock %}
+</div>
+
+<div class="section2">
+    {% block graphmf %}
+    {% include 'proj/graphmf.html.twig' %}
+    {% endblock %}
+</div>
+
+<div class="section2">
+    {% block graphmfc %}
+    {% include 'proj/graphmfc.html.twig' %}
+    {% endblock %}
+</div>
+<h2>Grafer och sånt</h2>
+<p>BLA BLA blab la</p>
+
+<div class="section2">
+    {% block tablemk %}
+    {% include 'proj/tablemk.html.twig' %}
+    {% endblock %}
+</div>
+
+<div class="section3">
+    {% block tablemf %}
+    {% include 'proj/tablemf.html.twig' %}
+    {% endblock %}
+</div>
+
+
+{% endblock %}

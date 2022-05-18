@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2022-05-10 21:45:10        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2022-05-18 14:18:26        , with PHPMetrics v2.8.1 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -508,6 +508,61 @@
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\Product"
         ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Repository\\MaterialkonsumtionRepository",
+            "\\App\\Repository\\MaterialfotavtryckRepository",
+            "\\App\\Proj\\ReadData",
+            "\\App\\Proj\\BarGraph",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\MaterialkonsumtionRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Materialkonsumtion"
+        ]
+    },
+    {
+        "name": "\\App\\Repository\\MaterialfotavtryckRepository",
+        "size": 3000,
+        "relations": [
+            "\\Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "\\Doctrine\\Persistence\\ManagerRegistry",
+            "\\App\\Entity\\Materialfotavtryck"
+        ]
+    },
+    {
+        "name": "\\App\\Proj\\ReadData",
+        "size": 3000,
+        "relations": [
+            "\\App\\Entity\\Materialkonsumtion",
+            "\\App\\Entity\\Materialfotavtryck"
+        ]
+    },
+    {
+        "name": "\\App\\Proj\\BarGraph",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Materialfotavtryck",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Materialkonsumtion",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Kernel",

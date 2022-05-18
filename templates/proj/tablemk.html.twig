@@ -1,0 +1,23 @@
+{% block style %}
+ <link rel="stylesheet" href="{{ asset("style/table.css") }}">
+{% endblock %}
+
+{% block tablemk %}
+    <table class="table">
+        <tr>
+            <th>Årtal</th>
+            <th>Inhemsk</th>
+            <th>Import</th>
+            <th>Export</th>
+        </tr>
+    {% for item in materialk %}
+        <tr>
+            <td>{{ item.artal }}</td>
+            <td>{{ item.inhemsk }}</td>
+            <td>{{ item.import }}</td>
+            <td>{{ item.export }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
