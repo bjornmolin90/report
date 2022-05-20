@@ -18,6 +18,18 @@ h1, h2, h3 {
     font-family: Garamond, sans-serif;
 }
 
+h2 {
+    font-size: 28px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 20px;
+}
+
 .header-head {
     margin-right: auto;
     font-size: 2em;
@@ -44,16 +56,14 @@ h1, h2, h3 {
     color: #b2dfdb;
 }
 
-
 .content {
-    margin: 0 200px;
+    margin: 0 250px;
 }
 
 footer {
     background-color: #D3D3D3;
     display: flex;
     color: black;
-    font-size: 16px;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 20px;
@@ -61,18 +71,20 @@ footer {
     padding-bottom: 30px;
 }
 
-.section1 {
-    padding-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+footer p {
+    font-size: 14px;
 }
 
-.section2 {
+.section-g {
     padding-top: 50px;
 }
 
-.section3 {
-    padding-top: 50px;
+.section-d {
+    padding-top: 100px;
+}
+
+.section-t {
+    padding-top: 60px;
 }
 @media only screen and (max-width: 768px) {
   img {

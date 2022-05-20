@@ -12,6 +12,8 @@ use App\Repository\MaterialkonsumtionRepository;
 use App\Repository\MaterialfotavtryckRepository;
 use App\Proj\ReadData;
 use App\Proj\BarGraph;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 /**
  * Controller class for project.
@@ -24,11 +26,13 @@ class ProjController extends AbstractController
         MaterialkonsumtionRepository $materialkonsumtionRepository,
         MaterialfotavtryckRepository $materialfotavtryckRepository,
     ): Response {
+        $mkfile = '/../../var/data/12.2.csv';
+        $mffile = '/../../var/data/12.1.csv';
         if (empty($materialkonsumtionRepository->findAll())) {
-            ReadData::materialKonsumtion($doctrine);
+            ReadData::materialKonsumtion($doctrine, $mkfile);
         }
         if (empty($materialfotavtryckRepository->findAll())) {
-            ReadData::materialFotavtryck($doctrine);
+            ReadData::materialFotavtryck($doctrine, $mffile);
         }
         $materialkonsumtion = $materialkonsumtionRepository
             ->findAll();
@@ -59,23 +63,10 @@ class ProjController extends AbstractController
     /**
     * @Route("/proj/reset", name="reset", methods={"GET"})
     */
-    public function resetData(
-        ManagerRegistry $doctrine,
-        MaterialkonsumtionRepository $materialkonsumtionRepository,
-        MaterialfotavtryckRepository $materialfotavtryckRepository,
-    ): Response {
-            $entityManager = $doctrine->getManager();
-            $clear = $materialkonsumtionRepository->findAll();
-        foreach ($clear as $item) {
-            $entityManager->remove($item);
-        }
-            $clear = $materialfotavtryckRepository->findAll();
-        foreach ($clear as $item) {
-            $entityManager->remove($item);
-        }
-            $entityManager->flush();
+    public function resetData(): Response {
+        $last_line = system('cp ../var/proj_reset.db ../var/proj.db', $retval);
 
-            return $this->redirectToRoute('proj');
+        return $this->redirectToRoute('proj');
     }
 
     /**
@@ -85,18 +76,21 @@ class ProjController extends AbstractController
     {
         $data = [
             'title' => "About",
-            'link_to_deck' => $this->generateUrl('deck'),
-            'link_to_shuffle' => $this->generateUrl('shuffle'),
-            'link_to_draw' => $this->generateUrl('draw'),
-            'link_to_draws' => $this->generateUrl('num-draws', [
-            'numDraws' => 1,
-            ]),
-            'link_to_deal' => $this->generateUrl('deal', [
-            'numPlayers' => 1,
-            'numCards' => 1,
-            ]),
-            'link_to_json' => $this->generateUrl('json'),
+            'link_to_reset' => $this->generateUrl('reset'),
+            'link_to_cleancode' => $this->generateUrl('cleancode'),
         ];
         return $this->render('proj/about.html.twig', $data);
     }
+
+    /**
+    * @Route("/proj/cleancode", name="cleancode", methods={"GET"})
+    */
+    public function cleanCode(): Response
+    {
+        $data = [
+            'title' => "Cleancode",
+        ];
+        return $this->render('proj/clean.html.twig', $data);
+    }
+
 }

@@ -1,3 +1,6 @@
+# About
+Project containing different pages regarding MVC, testing, codestandard and card related apps. Also contains database access with orm with the main project site discussing material consumtion.
+
 # Badges for my report repo
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bjornmolin90/report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/bjornmolin90/report/?branch=main)

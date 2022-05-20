@@ -16,10 +16,10 @@ class ReadData
     /**
      * Reads data for table materialkonsumtion.
      */
-    public static function materialKonsumtion($doctrine)
+    public static function materialKonsumtion($doctrine, $file)
     {
         $entityManager = $doctrine->getManager();
-        $csv = fopen(dirname(__FILE__) . '/../../var/data/12.2.csv', 'r');
+        $csv = fopen(dirname(__FILE__) . $file, 'r');
         while (!feof($csv)) {
             $material = new Materialkonsumtion();
             $line = fgetcsv($csv);
@@ -36,10 +36,10 @@ class ReadData
     /**
      * Reads data for table materialfotavtryck.
      */
-    public static function materialFotavtryck($doctrine)
+    public static function materialFotavtryck($doctrine, $file)
     {
         $entityManager = $doctrine->getManager();
-        $csv = fopen(dirname(__FILE__) . '/../../var/data/12.1.csv', 'r');
+        $csv = fopen(dirname(__FILE__) . $file, 'r');
         while (!feof($csv)) {
             $material = new Materialfotavtryck();
             $line = fgetcsv($csv);

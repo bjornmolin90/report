@@ -32,7 +32,9 @@ class BarGraph
      */
     public static function mfdata($data)
     {
-        $graphData = array();
+        $graphDatamf = array();
+        $graphDatamfc = array();
+
         foreach ($data as $item) {
             $graphDatamf[$item->getArtal()] = $item->getTotal();
             $graphDatamfc[$item->getArtal()] = $item->getPercapita();
@@ -48,9 +50,7 @@ class BarGraph
     {
         $data = array();
         $ticks = array();
-        $par = array();
 
-        $len = count($dbdata);
         $max = max($dbdata);
         $scale = 400 / $max;
         $offset = 50;
@@ -60,7 +60,7 @@ class BarGraph
         "chartwidth" => "800",
         "chartmargin" => "20",
         "barwidth" => "40",
-        "titleadjust" => "0",
+        "titleadjust" => "-7",
         "tickswidth" => "950",
         "ticksadjust" => "50",
         "tickmarksadjust" => "-50",);

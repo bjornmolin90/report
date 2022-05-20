@@ -1,38 +1,62 @@
 {% extends 'proj/baseproj.html.twig' %}
 
 {% block content %}
-<h1>Materialkonsumtion</h1>
+<h1>Hållbar konsumtion och produktion</h1>
 
-<h2>Grafer och sånt</h2>
-<p>BLA BLA blab la</p>
+<h2>Inledning</h2>
+<p>FN har 17 globala mål som alla ska verka för en hållbar utveckling för alla världens länder. Målet är i huvudsak att till 2030 ha uppnåt fyra saker. Avskaffa extrem fattigdom, minska ojämlikhet och orättvisor, främja fred och rättvisa samt att lösa klimatkrisen.</p>
 
-<div class="section1">
+<p>Målen har ett spann från konkreta mål som ingen hunger och ingen fattigdom till ekosystem och biologiskt mångfald och fredliga och inkluderande samhällen. Denna rapport kommer dock att fokusera på mål 12 som är hållbar konsumtion och produktion</p>
+
+<p>Varje mål presenterar en rad delmål och indikatorer för att uppnå målsättningen. För mål 12 är dessa bland annat att halvera matsvinnet i världen, öka allmänhetens kunskap om hållbara livsstilar och att minska mängden avfall markant. Det finns ett antal delmål till men det är utvecklingen för delmål 12.2 som ska visas närmare här med lite statistik och diskussioner kring den. Delmålet heter hållbar förvaltning och använding av naturresurser. Målet med detta är att senast 2030 uppnå en hållbar förvaltning och ett effektivt nyttjande av naturresurser.</p>
+
+<p>Som tidigare nämnt finns det indikatorer för respektive delmål. För delmål 12.2 är dessa materiell konsumtion och materiellt fotavtryck. De kan mätas på olika sätt. De mäts per land och mäts utöver totalen även per capita och per bnp. Gällande materialkonsumtion mäts även hur mycket som konsumeras i landet, hur mycket som har importeras och hur mycket landet har exporterat.</p>
+
+<p>Alla siffror nedan är hämtade från <a href="https://scb.se/">statistiska centralbyrån</a> och har mätningar för Sverige mellan 2000 och 2017. Det finns mer statistik att hämta där om både detta delmålet och övriga mål. Mer information om de globala målen hittas på deras <a href="https://www.globalamalen.se/om-globala-malen/">hemsida</a>.</p>
+
+<div class="section-g">
+    <h2>Materialkonsumtion</h2>
+    <p>Grafen nedan visar Sveriges totala materialkonsumtion årsvis från 2000  till 2017 i megaton. För mer detaljer kring konsumtionen finns en tabell längre ner rapporten.</p>
     {% block graphmk %}
     {% include 'proj/graphmk.html.twig' %}
     {% endblock %}
 </div>
 
-<div class="section2">
+<div class="section-g">
+    <h2>Materialfotavtryck (total)</h2>
+    <p>Grafen nedan visar Sveriges totala materialfotavtryck årsvis från 2000  till 2017 i megaton. För mer detaljer kring materialfotavtrycket finns en tabell längre ner rapporten.</p>
     {% block graphmf %}
     {% include 'proj/graphmf.html.twig' %}
     {% endblock %}
 </div>
 
-<div class="section2">
+<div class="section-g">
+    <h2>Materialfotavtryck (per capita)</h2>
+    <p>Grafen nedan visar Sveriges materialfotavtryck i ton per capita årsvis från 2000 till 2017. För mer detaljer kring materialfotavtrycket finns en tabell längre ner rapporten.</p>
     {% block graphmfc %}
     {% include 'proj/graphmfc.html.twig' %}
     {% endblock %}
 </div>
-<h2>Grafer och sånt</h2>
-<p>BLA BLA blab la</p>
+<div class="section-d">
+    <h2>Diskussion</h2>
+    <p>Som visas av graferna har Sverige varken gällande materialkonsumtion eller materialfotavtryck visat på någon vidare förbättringar. Både konsumtionen och avtrycket går stadigt uppåt. Måttet per capita är dock viktigt att ta upp då det ger en lite annan bild. Även om det inte har förbättrats visar det att vi inte längre ökar vårat fotavtryck (till 2017). Mellan 2014 och 2017 har det inte ökat alls och även innan dess låg det på samma nivå under några år innan det ökade med ett ton till 2014. Det är alltså ingen ökande trend vilket får ses som positivt.</p>
 
-<div class="section2">
+    <p>En viktig aspekt att ta upp är det som syns under året 2009. Då vi hade en finanskris 2008-2009 kan man rimligen anta att denna haft en enorm påverkan på vårat konsumtionsmönster och bör vara förklaringen till att siffrorna för 2009 sticker ut på båda indikatorerna. Går man tillbaka lite ser man även att den ökande trenden från 2000 har avstannat och per capita peakade vi 2007. Vi har alltså sedan finanskrisen blivit lite bättre än vi var innan vilket känns som en trend då det vid tillfället för mätningen gått tillräckligt lång tid sen krisen för att man inte ska härleda minskningen från 2007 till 2017 till den.</p>
+
+    <p>Materialkonsumtionen verkar inte ha riktigt samma avstannande tendens. Även här måste man dock påpeka att vi växer som land och i takt med att befolkningsmängden ökar kommer även konsumtionen att öka. Med detta sagt har det dock ökad i en större takt än vårt materialfotavtryck har. Trenden ser även lite dyster ut då det ökar i snabbare takt de sista åren innan 2017.</p>
+
+    <p>Vad man kan dra för slutsatser av datan är svårt att säga av framförallt två anledningar. Den ena är naturligtvis att mätningarna bara sträcker sig till 2017. Det är svårt att hitta aktuell data sammanställd. En uppdaterad sammanställning med nyare värden hade varit kul att se. Den andra anledningen är att målsättningen är rätt oklar. Målet för detta delmålet, hållbar konsumtion och produktion, är att senast 2030 uppnå en hållbar förvaltning och ett effektivt nyttjande av naturresurser. Vad det i praktiken innebär är inte helt lätt att veta.</p>
+
+    <p>Att vårt materialfotavtryck inte ökar per capita får i alla fall ses som postivt och definitivt ett steg mot att nå målsättningen. Man kan nog utgå från att det även kräver att vi minskar det för att det ska finnas någon rimlighet i målsättningen. Materialkonsumtionen ökar fortfarande till 2017 och kan därför vid den tidpunkten enbart ses som ett misslyckande. Hur det sett ut från 2017 och framåt och vilka åtgärder som kan vidtas för att förbättra våra resultat går utanför denna studien. Kanske kunde man även jobbat med lite tydligare och mer konkreta mål, inte minst när man har data att utgå från och tydligt kan mäta en ökning eller minskning, om inte annat via en procentuell minskning. Det återstår helt enkelt att se hur vi lyckas framöver.</p>
+</div>
+
+<div class="section-t">
     {% block tablemk %}
     {% include 'proj/tablemk.html.twig' %}
     {% endblock %}
 </div>
 
-<div class="section3">
+<div class="section-t">
     {% block tablemf %}
     {% include 'proj/tablemf.html.twig' %}
     {% endblock %}

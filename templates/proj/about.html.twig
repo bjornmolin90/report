@@ -2,8 +2,27 @@
 
 {% block content %}
 <h1>Om</h1>
-<p></p>
-<p><a href="https://github.com/bjornmolin90/report">Github</a>.</p>
+<p>Mitt projekt handlar om att presentera indikatorer för hållbarhet. I mitt fall är indikatorerna materialkonsumtion och materialfotavtryck. Jag har valt att hålla en neutral ton och kommer mest att presentera datan och diskutera kring den, snarare än att ha subjektiva åsikter om ämnet. Från användarperspektivet har fokuset varit att göra snygga grafer för att presentera datan. Det ska vara lätt att få en överblick över datan som presenteras och den ska vara strukturerad på ett bra sätt. Självklart ska även innehållet i sig vara korrekt och ge mening men fokuset har varit på presentationen av innehållet. Jag har valt att göra stapeldiagram med sammanställingar av data men kommer även att inkludera mer detaljerad data i tabeller för den som vill se mer.</p>
 
+<p>En av de viktigaste delarna i projektet, utöver att presentera datan på ett snyggt sätt har varit databas-hanteringen med orm. Jag valde att spara data i csv-filer som jag läser in via en modell-klass. Innan dess har jag naturligtvis skapat mina entities och kört en migration.</p>
+
+<p>Jag har skapat två modell-klasser, en för respektive uppgift. Den ena läser in csv och fyller på tabellerna med data medan den andra hanterar data och ritar grafer av den. Utöver det har jag en ny controller för projektsidorna och ett flertal templates och css:er för att strukturera koden på ett bra sätt.</p>
+
+<p>Jag har skrivit kommentarer med docblock och genererat rapporter i phpmetrics och scrutinizer. All dokumentation och länk till mitt githubrepo finns längst ner på sidan.</p>
+
+<p>För kod-kvalitén har jag använt mig av min linter som kör olika moduler för att kontrollera kodstandard, bland annat phpcs codesniffer för att kontrollera min kodstil och phpstan som hittar eventuella buggar. Jag har även skrivit egna tester för att testa min kod. Dessa är dock enbart gjorda för modell-klasserna.</p>
+
+<p>Jag har även använt rapporterna som genereras i phpmetrics och scrutinizer för att kontrollera min kod. Jag har inte haft några direkta anmärkningar i de rapporterna. I scrutinizer hade jag fortfarande 10 i betyg efter att ha gjort klart koden vilket var trevlig att se. Klasserna som lagts till sedan sist hade alla A i betyg. PHP-metrics har en väldigt trevlig översikt där man på overview ser vad som har förändrats. Min genomsnittliga cyklomatiska komplexitet hade till exempel ökad med 0,1 vilket jag tyckte kändes helt okej då mängden klasser hade ökat med 7 och rader kod hade ökat med 395 rader. Alla mina nya klasser hade dessutom antingen grönt eller gult i maintainability index.</p>
+
+<p>Överlag är jag därför mycket nöjd med resultatet, jag hade några nya minor issues i scrutinizer som jag ordnade men det enda som jag känner egentligen ser nagtivt ut är min code coverage. Detta är inget nytt för projektet utan har varit så genomgående i och med att jag bara skriver tester för modell-klasserna. Min coverage för dem ser däremot bra ut med 100% på projektets modell-klasser och gjorde även tidigare och det är därför inget jag tycker man behöver lägga någon vikt vid även om det ser lite trist ut med en röd badge.</p>
+
+
+<h2>Länkar</h2>
+<p><a href="https://github.com/bjornmolin90/report">Github</a></p>
+<p><a href="https://scrutinizer-ci.com/g/bjornmolin90/report/?branch=main">Scrutinizer</a></p>
+<p><a href="{{ link_to_reset }}">Reset</a></p>
+<p><a href="{{ link_to_cleancode }}">Clean code</a></p>
+<p><a href="/docs/api/index.html">Docs</a></p>
+<p><a href="/docs/metrics/index.html">Metrics</a></p>
 
 {% endblock %}
