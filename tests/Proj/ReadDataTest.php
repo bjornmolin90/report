@@ -21,7 +21,7 @@ class ReadDataTest extends TestCase
      public function testMaterialKonsumtion()
      {
          $doctrine = new emMock();
-         $file = "/../../var/data/test.csv";
+         $file = "/../Proj/test.csv";
          ReadData::materialKonsumtion($doctrine, $file);
 
          $this->assertEquals(emMock::$material->getArtal(), 1);

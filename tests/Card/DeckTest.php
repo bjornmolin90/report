@@ -20,6 +20,16 @@ class DeckTest extends TestCase
      }
 
      /**
+      * Construct object and verify that the object has the expected
+      * properties.
+      */
+      public function testCreateObjectDeck2()
+      {
+          $deck = new Deck2();
+          $this->assertInstanceOf("\App\Card\Deck2", $deck);
+      }
+
+     /**
       * Tests that length method returns correct length of a deck object.
       */
      public function testLengthMethod()
@@ -36,19 +46,6 @@ class DeckTest extends TestCase
          $deck = new Deck();
          $deck->draw();
          $this->assertEquals($deck->length(), 51);
-     }
-
-
-     /**
-      * Tests that shuffle method changed the order of a card in the deck. Will return false
-      * negative if the card randomly appears att the same place in the array.
-      */
-     public function testShuffleMethod()
-     {
-         $deck = new Deck();
-         $this->assertEquals($deck->deck[1]->value, 2);
-         $deck->shuffle();
-         $this->assertNotEquals($deck->deck[1]->value, 2);
      }
 
      /**
