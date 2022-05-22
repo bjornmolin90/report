@@ -34,7 +34,7 @@ class ReadDataTest extends TestCase
       public function testMaterialFotavtryck()
       {
           $doctrine = new emMock();
-          $file = "/../../var/data/test.csv";
+          $file = "/../Proj/test.csv";
           ReadData::materialFotavtryck($doctrine, $file);
 
           $this->assertEquals(emMock::$material->getTotal(), 2);
