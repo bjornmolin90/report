@@ -63,7 +63,8 @@ class ProjController extends AbstractController
     /**
     * @Route("/proj/reset", name="reset", methods={"GET"})
     */
-    public function resetData(): Response {
+    public function resetData(): Response
+    {
         $last_line = system('cp ../var/proj_reset.db ../var/proj.db', $retval);
 
         return $this->redirectToRoute('proj');
@@ -92,5 +93,4 @@ class ProjController extends AbstractController
         ];
         return $this->render('proj/clean.html.twig', $data);
     }
-
 }
