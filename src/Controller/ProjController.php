@@ -65,7 +65,7 @@ class ProjController extends AbstractController
     */
     public function resetData(): Response
     {
-        $last_line = system('cp ../var/proj_reset.db ../var/proj.db', $retval);
+        system('cp ../var/proj_reset.db ../var/proj.db', $retval);
 
         return $this->redirectToRoute('proj');
     }
